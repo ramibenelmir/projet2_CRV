@@ -4,7 +4,7 @@ Ce projet a pour objectif de créer une infrastructure comprenant plusieurs serv
 
 
 ## Contenu du Dépôt : 
-- la base de donnée redis
+- la base de donnée redis : \n
   un déploiment (un seul replica)
   un service exposant le déploiment
 - le serveur node redis
