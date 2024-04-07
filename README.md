@@ -13,7 +13,7 @@ Ce projet a pour objectif de créer une infrastructure comprenant plusieurs serv
 3. le front end: <br/>
 - un déploiment<br/>
 - un service exposant le déploiment<br/>
-- le Dockerfile utilisé pour génerer l'image docker, ansi que le package.json
+- le Dockerfile utilisé pour génerer l'image docker, ainsi que le package.json
 4. Prometheus:<br/>
 - un dépoilement<br/>
 - un service exposant le déploiment<br/>
