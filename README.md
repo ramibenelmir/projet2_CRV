@@ -4,4 +4,12 @@ Ce projet a pour objectif de créer une infrastructure comprenant plusieurs serv
 
 
 ## Contenu du Dépôt : 
-
+- la base de donnée redis
+  un déploiment (un seul replica)
+  un service exposant le déploiment
+- le serveur node redis
+  un déploiment (plusieurs replicas possible)
+  un service exposant le déploiment
+-le front end
+  un déploiment
+  un service exposant le déploiment
