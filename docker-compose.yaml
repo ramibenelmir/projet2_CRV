@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  main:
+    image: redis:7.2
+    hostname: redis
+    ports:
+      -  6379:6379
+    networks:
+      -  redis-replication
+
+    replica:
+      image: redis:7.2
+      hostname: redis-replica
+      deploy:
+        replica: 6 
+      command: redis-server --slaveof redis 6379
+      depends_on:
+        -  main
+      networks:
+        -  redis-replication
+
+    server: 
+      image: arthurescriou/node-redis:1.0.5
+      hostname: server
+      ports:
+        -  8080:8080
+      depends_on:
+        -  main
+        -  replica
+      networks:
+        -  redis-replication
+      environment:
+        -  REDIS_URL=redis://redis:6379
+        -  REDIS_REPLICAS_URL=redis://redis-replica:6379
+
+  networks:
+    redis-replication:
+      driver: bridge

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+
+kind: Deployment
+metadata:
+  name: db-redis-deployment-rami
+  labels:
+    app: node-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-redis
+  template:
+    metadata:
+      labels:
+        app: node-redis
+    spec:
+      containers:
+        - name: db-redis-rami
+          image: redis:7.2
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 6379

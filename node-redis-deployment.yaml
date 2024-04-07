@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+
+kind: Deployment
+metadata:
+  name: server-redis-deployment-rami
+  labels:
+    app: node-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-redis
+  template:
+    metadata:
+      labels:
+        app: node-redis
+    spec:
+      containers:
+        - name: node-redis
+          image: arthurescriou/node-redis:1.0.5
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
+          -  name: REDIS_URL
+             value: "redis://db-redis-service-rami:6379"
+          -  name: PORT
+             value: '8080'
+          -  name: REDIS_REPLICAS_URL
+             value: "redis://db-redis-service-rami:6379"
+
