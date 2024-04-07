@@ -5,17 +5,18 @@ Ce projet a pour objectif de créer une infrastructure comprenant plusieurs serv
 
 ## Contenu du Dépôt : 
 1. la base de donnée redis : <br/>
-un déploiment  <br/>
-un service exposant le déploiment<br/>
+- un déploiment  <br/>
+- un service exposant le déploiment<br/>
 2. le serveur node redis<br/>
-un déploiment <br/>
-un service exposant le déploiment<br/>
+- un déploiment <br/>
+- un service exposant le déploiment<br/>
 3. le front end: <br/>
-un déploiment<br/>
-un service exposant le déploiment<br/>
+- un déploiment<br/>
+- un service exposant le déploiment<br/>
+- le Dockerfile utilisé pour génerer l'image docker, ansi que le package.json
 4. Prometheus:<br/>
-un dépoilement<br/>
-un service exposant le déploiment<br/>
-un ficher de configuration <br/>
+- un dépoilement<br/>
+- un service exposant le déploiment<br/>
+- un ficher de configuration <br/>
   
 
